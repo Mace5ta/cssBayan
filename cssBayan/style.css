@@ -13,22 +13,6 @@ h1 {
     border-bottom: 0.1em solid grey;
 }
 
-.item {
-    width: 100%;
-    border-bottom: 0.1em solid grey;
-    cursor: pointer;
-}
-
-label {
-    display: flex;
-    justify-content: space-between;
-    color: darkgreen;
-    cursor: pointer;
-    font-weight: bold;
-    height: 2em;
-    align-items: center;
-}
-
 .shuttle-svg {
     width: 4%;
     z-index: -1;
@@ -40,6 +24,7 @@ label {
     overflow: hidden;
     text-align: center;
     transition: max-height 0.5s linear;
+    border-bottom: 0.1em solid grey;
 }
 
 .image-wrapper img {
@@ -49,43 +34,69 @@ label {
     transition: 0.5s;
 }
 
-input:checked ~ .image-wrapper {
-    max-height: 100vh;
-}
-
-.item:hover .image-wrapper {
-    max-height: 100vh;
-}
-
-.item:hover .image-wrapper img{
-    transform: scale(1);
-    transition: 0.5s;
-}
-
-.item:hover .shuttle-svg {
-    transform: rotate(90deg);
-    transition: all 0.5s;
-}
-
-input:checked ~ label {
-    color: black;
-}
-
 input:checked ~ .image-wrapper img {
     transform: scale(1);
 }
 
-input:checked ~ label .shuttle-svg {
-    transform: rotate(90deg);
-}
-
-.content:hover label {
-    color: black;
-}
 
 .content:hover .shuttle-svg {
     z-index: 0;
 }
+
+label {
+    cursor: pointer;
+}
+
+label:hover .shuttle-svg {
+    transform: rotate(90deg);
+    transition: all 0.5s;
+}
+
+label:hover .image-wrapper {
+    max-height: 100vh;
+}
+
+label:active .image-wrapper {
+    opacity: 50%;
+}
+
+label:hover .image-wrapper img {
+    transform: scale(1);
+    transition: 0.5s;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 2em;
+}
+
+h3 {
+    color: darkgreen;
+    font-weight: bold;
+}
+
+input:checked ~ .image-wrapper {
+    max-height: 100vh;
+}
+
+input:checked ~ div h3 {
+    color: black;
+}
+
+input:checked ~ div .shuttle-svg {
+    transform: rotate(90deg);
+}
+
+.content:hover h3 {
+    color: black;
+}
+
+label:active .header h3 {
+    color: darkgreen;
+}
+
 
 
 
