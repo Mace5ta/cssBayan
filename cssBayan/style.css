@@ -2,33 +2,26 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-main {
     background: lightcyan;
-    height: 100vh;
 }
 
 .container {
-    padding: 5% 25% 0 25%;
+    padding: 5% 25%;
 }
 
 h1 {
-    border-bottom: 1px solid grey;
+    border-bottom: 0.1em solid grey;
 }
 
 .item {
     width: 100%;
-    border-bottom: 1px solid grey;
+    border-bottom: 0.1em solid grey;
     cursor: pointer;
-}
-
-input {
-    display: none;
 }
 
 label {
     display: flex;
+    justify-content: space-between;
     color: darkgreen;
     cursor: pointer;
     font-weight: bold;
@@ -36,27 +29,63 @@ label {
     align-items: center;
 }
 
-.image-wrapper {
-    height: 0;
-    /*transition: all 1s ease;*/
-    overflow: hidden;
-    text-align: center;
+.shuttle-svg {
+    width: 4%;
+    z-index: -1;
+    transition: 0.5s;
 }
 
-img {
+.image-wrapper {
+    max-height: 0;
+    overflow: hidden;
+    text-align: center;
+    transition: max-height 0.5s linear;
+}
+
+.image-wrapper img {
     width: 50%;
     margin-bottom: 1em;
+    transform: scale(0.9);
+    transition: 0.5s;
 }
 
 input:checked ~ .image-wrapper {
-    height: 100%;
-    /*transition: all 1s ease;*/
+    max-height: 100vh;
+}
+
+.item:hover .image-wrapper {
+    max-height: 100vh;
+}
+
+.item:hover .image-wrapper img{
+    transform: scale(1);
+    transition: 0.5s;
+}
+
+.item:hover .shuttle-svg {
+    transform: rotate(90deg);
+    transition: all 0.5s;
 }
 
 input:checked ~ label {
     color: black;
 }
 
+input:checked ~ .image-wrapper img {
+    transform: scale(1);
+}
+
+input:checked ~ label .shuttle-svg {
+    transform: rotate(90deg);
+}
+
 .content:hover label {
     color: black;
 }
+
+.content:hover .shuttle-svg {
+    z-index: 0;
+}
+
+
+
