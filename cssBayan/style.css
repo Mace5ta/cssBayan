@@ -81,7 +81,8 @@ label:active .header .shuttle-svg {
 label:active .header h3 {
     color: purple;
 }
-@media screen and (min-width: 820px) and (max-width: 1280px){
+
+@media screen and (min-width: 820px) and (max-width: 1280px) {
     .container {
         padding: 2% 5%;
     }
@@ -117,6 +118,12 @@ label:active .header h3 {
         z-index: -1;
     }
 
+    .image-wrapper img {
+        width: 50%;
+    }
+}
+
+@media (hover: hover) {
     .content:hover .shuttle-svg {
         z-index: 0;
         fill: black;
@@ -138,10 +145,6 @@ label:active .header h3 {
     label:hover .image-wrapper img {
         transform: scale(1);
         transition: 0.5s;
-    }
-
-    .image-wrapper img {
-        width: 50%;
     }
 }
 
