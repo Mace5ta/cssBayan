@@ -11,6 +11,14 @@
 
 h1 {
     font-size: 1.8em;
+    text-align: center;
+    /*border-bottom: 0.1em solid grey;*/
+}
+
+h2 {
+    font-size: 1.6em;
+    text-align: center;
+    font-style: italic;
     border-bottom: 0.1em solid grey;
 }
 
@@ -95,6 +103,10 @@ label:active .header h3 {
         font-size: 3em;
     }
 
+    h2 {
+        font-size: 2.5em;
+    }
+
     h3 {
         font-size: 2em;
     }
@@ -107,6 +119,10 @@ label:active .header h3 {
 
     h1 {
         font-size: 3.1em;
+    }
+
+    h2 {
+        font-size: 2.6em;
     }
 
     h3 {
